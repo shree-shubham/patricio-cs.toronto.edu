@@ -34,8 +34,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', end
     height: 100%;
     background-size: cover;
     position: relative;
-    //background: #fafafa;
-    //background: #aaaaaa;
 }
 
 .nav>li>a{
