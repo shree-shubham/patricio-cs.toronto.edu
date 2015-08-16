@@ -248,16 +248,3 @@ body {
 .no-block {
     display: block;
 }
-
-.back-canvas {
-    position: relative;
-    left: 0px;
-    right: 0px;
-    z-index: 0;
-    float: left;
-}
-
-.front{
-    position: relative;
-    z-index: 1;
-}
