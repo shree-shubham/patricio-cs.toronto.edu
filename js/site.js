@@ -1,38 +1,10 @@
 (function() {
 
     $(document).ready(function() {
-        $('body').scrollspy({
-            target: '.menu'
-        });
 
-        $(window).scroll(function() {
-            /* Check the location of each desired element */
-            $('.popup').each(function(i) {
-                var scrollTop = $(window).scrollTop();
-                var topObject = $(this).position().top;
-                var heightObject = $(this).outerHeight();
-                var heightWindow = $(window).height();
-                var bottomObject = topObject + heightObject;
-                var bottomWindow = scrollTop + heightWindow;
-                var percentajeOnScreen = Math.abs(bottomWindow - bottomObject);
-
-                if (bottomWindow - topObject < 200) {
-                    console.log("ahora " + (Math.abs(bottomWindow - topObject)));
-                    $(this).css("opacity", 0.3);
-                } else {
-                    $(this).css("opacity", 1);
-                }
-            });
-        });
-
-        function toggleInfo(show) {
-            isCompacted = true;
-            if (show === undefined) {
-                isCompacted = $("#info").hasClass("compacted");
-            } else {
-                isCompacted = show;
-            }
-            if (isCompacted) {
+        // Toggles menu header visibility.
+        function toggleHeader(show) {
+            if (show) {
                 $("#info").removeClass("compacted");
                 $("#resize-icon").addClass("glyphicon-resize-full");
                 $("#resize-icon").removeClass("glyphicon-resize-small");
@@ -43,19 +15,52 @@
             }
         }
 
-        $('body').on('activate.bs.scrollspy', function() {
-            var hash = $(this).find("li.active a").attr("href");
-            if (hash === "#home") {
-                toggleInfo(true);
-            } else {
-                toggleInfo(false);
-            }
-        });
-        
+        // Toggles menu header according to clicks on little resize button
+        // of right-top corner of the screen.
         $('#resize').click(function(e) {
             e.preventDefault();
-            toggleInfo();
+            toggleHeader($("#info").hasClass("compacted"));
         });
+
+        // Shows menu header when it is on top of page. Hides it
+        // otherwise.
+        $('body').on('activate.bs.scrollspy', function() {
+            var hash = $(this).find("li.active a").attr("href");
+            var doToggle = (hash === "#home")?true:false;
+            toggleHeader(doToggle);
+        });
+
+        // Updates menu active element according to scrolled distance.
+        $('body').scrollspy({
+            target: '.menu'
+        });
+
+        // Changes opacity of popups when they are at less distance than
+        // "distance" of the bottom of the screen.
+        $(window).scroll(function() {
+            var distance = 200; // 200px
+            var scrollTop = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            var documentHeight = $(document).height();
+
+            $('.popup').each(function(i) {
+                var objectTop = $(this).position().top;
+                var objectHeight = $(this).outerHeight();
+                var objectBottom = objectTop + objectHeight;
+                var windowBottom = scrollTop + windowHeight;
+                var percentajeOnScreen = Math.abs(windowBottom - objectBottom);
+
+                if (windowBottom - objectTop < distance) {
+                    $(this).css("opacity", 0.3);
+                } else {
+                    $(this).css("opacity", 1);
+                }
+            });
+
+            if (scrollTop + windowHeight == documentHeight) {
+                console.log("bottom!");
+            }
+        });        
     });
 
 })(window);
