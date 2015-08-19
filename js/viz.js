@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-
-body {
-  margin: 0;
-  background: #222;
-  min-width: 960px;
-}
-
-rect {
-  fill: none;
-  pointer-events: all;
-}
-
-circle {
-  fill: none;
-  stroke-width: 2.5px;
-}
-
-</style>
-<body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<script>
+(function(){
 
 var width = Math.max(960, innerWidth),
     height = Math.max(500, innerHeight);
 
 var i = 0;
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#hidden").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -69,4 +46,4 @@ function background(){
       .style("fill-opacity", 1e-6);
 }
 
-</script>
+})(window);

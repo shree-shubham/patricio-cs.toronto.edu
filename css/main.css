@@ -241,3 +241,21 @@ body {
 .no-block {
     display: block;
 }
+
+/*
+* Viz
+*/
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+circle {
+  fill: none;
+  stroke-width: 2.5px;
+}
+
+.popup,#me,#menu,#left{
+    z-index: 20;
+}
