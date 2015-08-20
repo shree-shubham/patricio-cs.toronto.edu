@@ -21,15 +21,15 @@ function particle() {
   svg.insert("circle", "rect")
       .attr("cx", m[0])
       .attr("cy", m[1])
-      .attr("r", 3)
+      .attr("r", 10)
       .style("fill", d3.hsl((i = (i + 1) % 360), 1, .5))
       .style("stroke", d3.hsl((i), 1, .5))
       .style("stroke-opacity", 1)
       .style("fill-opacity", 1)
     .transition()
-      .duration(2000)
+      .duration(20000)
       .ease(Math.sqrt)
-      .attr("r", 20)
+      .attr("r", 50)
       .style("fill-opacity", 1e-6)
       .style("stroke-opacity", 1e-6)
       .remove();
@@ -41,7 +41,7 @@ function background(){
   rect.style("fill", d3.hsl((i), 1, .5))
       .style("fill-opacity", 1)
     .transition()
-      .duration(500)
+      .duration(10000)
       .style("fill", "#FFFFFF")
       .style("fill-opacity", 1e-6);
 }
