@@ -8,6 +8,11 @@ html {
     background: #000;
 }
 
+@font-face {
+    font-family: alex-brush;
+    src: url("../fonts/myriad-pro/MYRIADPRO-REGULAR.woff");
+}
+
 h1,
 h2,
 h3,
@@ -18,6 +23,10 @@ h6 {
     margin: 0px;
 }
 
+h1,h2,h3{
+    font-family: helvetica;
+}
+
 body {
     background: url("../img/phi.png") center fixed;
     width: 100%;
@@ -26,7 +35,12 @@ body {
     background-repeat: no-repeat;
     position: relative;
     background: #111;
-    font-family: helvetica !important;
+    font-family: arial, calibri !important;
+}
+
+ul, li{
+    list-style-type: square;
+
 }
 
 #hidden{
