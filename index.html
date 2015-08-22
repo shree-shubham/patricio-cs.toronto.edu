@@ -12,9 +12,11 @@ and open the template in the editor.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
     <style>
-</style>
+
+    </style>
 </head>
 
 <body>
@@ -36,14 +38,13 @@ and open the template in the editor.
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#home">Home</a></li>
-                                <li><a href="#highlights">Highlights</a></li>
-                                <li><a href="#areas-interest">Areas of Interest</a></li>
-                                <li><a href="#biography">Biography</a></li>
+                                <li><a href="#highlights">I'm</a></li>
+                                <li><a href="#areas-interest">I love</a></li>
+                                <li><a href="#biography">Brief Bio (not that brief!)</a></li>
                                 <li><a href="#formal-education">Formal Education</a></li>
-                                <li><a href="#research">Research</a></li>
-                                <li><a href="#honors-awards">Honors & Awards</a></li>
-                                <li><a href="#past-employment">Past Employment</a></li>
+                                <li><a href="#research">Research (academic)</a></li>
+                                <li><a href="#honors-awards">Honors & Awards (this part is fun!)</a></li>
+                                <li><a href="#work-experience">Work Experience</a></li>
                                 <li><a href="#conferences-talks">Conferences & Talks</a></li>
                                 <li><a href="#news-mentions">News Mentions</a></li>
                                 <li><a href="#extracurricular-activities">Extracurricular Activities</a></li>
@@ -101,23 +102,22 @@ and open the template in the editor.
                             </table>
                         </div>
                         <ul class="nav sidenav">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#highlights">Highlights</a></li>
-                            <li><a href="#areas-interest">Areas of Interest</a></li>
-                            <li><a href="#biography">Biography</a></li>
-                            <li><a href="#formal-education">Formal Education</a></li>
-                            <li><a href="#research">Research</a></li>
-                            <li><a href="#honors-awards">Honors & Awards</a></li>
-                            <li><a href="#past-employment">Past Employment</a></li>
-                            <li><a href="#conferences-talks">Conferences & Talks</a></li>
-                            <li><a href="#news-mentions">News Mentions</a></li>
-                            <li><a href="#extracurricular-activities">Extracurricular Activities</a></li>
+                            <li><a href="#highlights">I'm <i id="highlights-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#areas-interest">I love <i id="areas-interest-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#biography">Brief Bio (not that brief!) <i id="biography-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#formal-education">Formal Education <i id="formal-education-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#research">Research (academic)<i id="research-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#honors-awards">Honors & Awards <i id="honors-awards-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#work-experience">Work Experience <i id="work-experience-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#conferences-talks">Conferences & Talks <i id="conferences-talks-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#news-mentions">News Mentions <i id="news-mentions-i" class="fa fa-check m-check"></i></a></li>
+                            <li><a href="#extracurricular-activities">Extracurricular Activities <i id="extracurricular-activities-i" class="fa fa-check m-check"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-9">
-                <div id="home" class="section">
+                <div id="highlights" class="section">
                     <div class="popup left closer">
                         <h1>
                                 Hi, I'm <span class="highlight">Patricio C&oacute;rdova!</span>
@@ -166,7 +166,7 @@ and open the template in the editor.
                 </div>
                 <div class="section hidden-sm hidden-xs">
                 </div>
-                <div id="highlights" class="section">
+                <div class="section">
                     <div class="popup left closer">
                         <h3 class="bold">I'm</h3>
                         <br/>
@@ -234,7 +234,7 @@ and open the template in the editor.
                                 <h4 class="bold">Data Visualization & Analysis</h4>
                                 <ul>
                                     <li>
-                                        <h4><b>Geospatial analysis:</b> I love geospatial data. Visual tools like: heatmaps, clusters, chloroplets, etc. can show hidden data patterns that you would have never been able to see without a visual tool.</h4>
+                                        <h4><b>Geospatial analysis:</b> I love geospatial data. Visual tools like: heatmaps, clusters, chloroplets, etc. can show hidden data patterns that you would have never been able to see without a them.</h4>
                                     </li>
                                 </ul>
                             </li>
@@ -242,7 +242,7 @@ and open the template in the editor.
                                 <h4 class="bold">UI + UX + Desing: Human Computer Interaction</h4>
                                 <ul>
                                     <li>
-                                        <h4><b>Interaction design:</b> interfaces must be beautiful and intuitive. To be intuitive they must start by following common sense. I have little experience with methodologies like Personas, A/B testing, UI metrics gathering and UX refinement.</h4>
+                                        <h4><b>Interaction design:</b> interfaces must be beautiful and intuitive. To be intuitive they must start by following common sense. I have experience with methodologies like Personas, A/B testing, UI metrics gathering and UX refinement.</h4>
                                     </li>
                                 </ul>
                             </li>
@@ -258,7 +258,10 @@ and open the template in the editor.
                                     <li>
                                         <h4><b>Unsupervised Learning:</b> automatic classification.</h4>
                                     </li>
-                                    <li><h4><b>Computer Vision:</b> object recognition and tracking, event detection.</h4><br/></li>
+                                    <li>
+                                        <h4><b>Computer Vision:</b> object recognition and tracking, event detection.</h4>
+                                        <br/>
+                                    </li>
                                 </ul>
                             </li>
                             <li>
@@ -272,7 +275,7 @@ and open the template in the editor.
                 </div>
                 <div id="biography" class="section">
                     <div class="popup left closer">
-                        <h3 class="bold">Brief Biography (not that brief!)</h3>
+                        <h3 class="bold">Brief Bio (not that brief!)</h3>
                         <br/>
                         <p class="justified">
                             I’m Software Engineer of 25 years old. I got my bachelor’s degree at
@@ -282,12 +285,10 @@ and open the template in the editor.
                             <br/>
                             <br/> Also, time ago I was the leader of two of the teams that represented my home country (Ecuador) in two international programming/software development contests. The first was <a class="bold" href="http://icpc.baylor.edu/" target="_blank">ACM ICPC Programming Contest</a>. I traveled to Bogotá in 2009 to compete in the South America - North regional finals.
                             <br/>
-                            <br/>
-                             The second was <a href="https://www.imaginecup.com/" target="_blank" class="bold">Microsoft Imagine Cup</a> 2013. Here, my team and me won the right to be the
+                            <br/> The second was <a href="https://www.imaginecup.com/" target="_blank" class="bold">Microsoft Imagine Cup</a> 2013. Here, my team and me won the right to be the
                             <a href="https://www.imaginecup.com/Finalists/Team?teamname=ayni&year=2013" target="_blank">Ecuadorian delegates in the world finals</a> after winning the local finals among 21 teams of different universities of Ecuador. In the <a href="https://www.imaginecup.com/Custom/Index/2013Winners_Finalists" target="_blank">world finals</a> held in St. Petersburg, Rusia, we competed against 81 teams of 70 countries. My team, together with the Brazilian team, were the only South American <a href="https://www.imaginecup.com/content/details/1145" class="bold" target="_blank">winners</a>. We were awarded with the Facebook Award thanks to our usage of the Facebook Open Graph API to spread social causes. The Facebook award was considered one of the most important <a href="#win" class="bold">prizes</a> of the contest worth $25,000 in Facebook Advertising Credits.
                             <br/>
-                            <br/> As other personal interests, I’m enthusiast, and advocate of social improvements. In fact, we won the Facebook Award at Microsoft Imagine Cup due to the prototype of non-profit social network we developed: Ayni (<a href="http://www.beayni.com" target="_blank">http://www.beayni.com</a>).
-                            After this, I had the honor to <a href="http://www.globalshapers.org/shapers/patricio-c%C3%B3rdova" target="_blank">be chosen</a> to join of the
+                            <br/> As other personal interests, I’m enthusiast, and advocate of social improvements. In fact, we won the Facebook Award at Microsoft Imagine Cup due to the prototype of non-profit social network we developed: Ayni (<a href="http://www.beayni.com" target="_blank">http://www.beayni.com</a>). After this, I had the honor to <a href="http://www.globalshapers.org/shapers/patricio-c%C3%B3rdova" target="_blank">be chosen</a> to join of the
                             <a href="http://www.globalshapers.org/" target="_blank"><b>Global Shapers Community</b></a>. <a target="_blank" href="https://www.youtube.com/watch?v=VvcUDDxr7Ic"> Global Shapers is an international community conformed by a selected group of young people</a> that have proven to excel in the fields they are immerse and that promote of social improvements in the world.
                         </p>
                     </div>
@@ -303,7 +304,7 @@ and open the template in the editor.
                 </div>
                 <div id="formal-education" class="section">
                     <div class="popup left">
-                        <h3 class="bold">Formal Education :)</h3>
+                        <h3 class="bold">Formal Education</h3>
                         <br/>
                         <h4>
                                 <b>M. Sc. in Applied Computing</b>
@@ -334,7 +335,7 @@ and open the template in the editor.
                 </div>
                 <div class="section" id="research">
                     <div class="popup left justified">
-                        <h3 class="bold">Research</h3>
+                        <h3 class="bold">Research (academic)</h3>
                         <br/>
                         <table>
                             <tr>
@@ -381,7 +382,7 @@ and open the template in the editor.
                         </ul>
                     </div>
                 </div>
-                <div class="section" id="past-employment">
+                <div class="section" id="work-experience">
                     <div class="popup left justified">
                         <h3 class="bold">Work Experience</h3>
                         <br/>
@@ -568,8 +569,24 @@ and open the template in the editor.
                         <div class="videoWrapper">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/Oyyg9_UWPag" frameborder="0" allowfullscreen></iframe>
                         </div>
+
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="z-index: 20">
+  Launch demo modal
+</button>
                     </div>
                 </div>
+
+                <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      hola
+    </div>
+  </div>
+</div>
                 <br/>
                 <br/>
                 <br/>

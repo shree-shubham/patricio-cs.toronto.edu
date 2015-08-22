@@ -1,4 +1,12 @@
 (function() {
+    /*********************************************************
+    /* Mmmmm, you are curious about how I made the background?
+    /* ...
+    /* ...
+    /* ...
+    /* D3 rules!
+    *********************************************************/
+
 
     var width = Math.max(960, innerWidth),
         height = Math.max(500, innerHeight);
@@ -26,8 +34,8 @@
             .style("stroke", d3.hsl((i), 1, .5))
             .style("stroke-opacity", 1)
             .style("fill-opacity", 1)
-            .transition()
-            .duration(20000)
+          .transition()
+            .duration(10000)
             .ease(Math.sqrt)
             .attr("r", 50)
             .style("fill-opacity", 1e-6)
@@ -41,28 +49,8 @@
         rect.style("fill", d3.hsl((i), 1, .5))
             .style("fill-opacity", 1)
             .transition()
-            .duration(10000)
+            .duration(1000)
             .style("fill", "#FFFFFF")
             .style("fill-opacity", 1e-6);
     }
-
-    function trans(j) {
-        rect.style("fill", d3.hsl((j = (j + 10) % 360), 1, .5))
-            .style("fill-opacity", 1)
-          .transition()
-            .duration(100)
-            .style("fill", "#FFFFFF")
-            .style("fill-opacity", 1e-6)
-          .each(function() {
-              trans(j);
-          });
-
-    }
-
-    $(document).ready(function() {
-    var j = 0;
-    trans(j);
-  });
-
-
 })(window);

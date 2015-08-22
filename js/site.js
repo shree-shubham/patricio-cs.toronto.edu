@@ -22,12 +22,16 @@
             toggleHeader($("#info").hasClass("compacted"));
         });
 
-        // Shows menu header when it is on top of page. Hides it
-        // otherwise.
+        function checkMenuItem(hash){
+            var checked = $(hash+"-i");
+            checked.addClass("green");
+        }
+
+        // Shows menu header when it is on top of page. Hides it otherwise.
         $('body').on('activate.bs.scrollspy', function() {
             var hash = $(this).find("li.active a").attr("href");
-            var doToggle = (hash === "#home")?true:false;
-            toggleHeader(doToggle);
+            toggleHeader((hash === "#highlights"));
+            checkMenuItem(hash);
         });
 
         // Updates menu active element according to scrolled distance.
@@ -35,9 +39,7 @@
             target: '.menu'
         });
 
-        // Changes opacity of popups when they are at less distance than
-        // "distance" of the bottom of the screen.
-        $(window).scroll(function() {
+        function setNewElementOpacity(){
             var distance = 200; // 200px
             var scrollTop = $(window).scrollTop();
             var windowHeight = $(window).height();
@@ -58,9 +60,15 @@
             });
 
             if (scrollTop + windowHeight == documentHeight) {
-                console.log("bottom!");
+                //bottom
             }
-        });        
+        }
+
+        // Changes opacity of popups when they are at less distance than
+        // "distance" of the bottom of the screen.
+        $(window).scroll(function() {
+            setNewElementOpacity();
+        });
     });
 
 })(window);
