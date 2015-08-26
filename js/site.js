@@ -39,6 +39,19 @@
             target: '.menu'
         });
 
+        function closeModal(id){
+            $(id).modal('hide')
+        }
+
+        $('#launchGiftA').click(function(){
+            closeModal("#giftChoose");
+            
+        });
+
+        $('#launchGiftB').click(function(){
+            closeModal("#giftChoose");
+        });
+
         function setNewElementOpacity(){
             var distance = 200; // 200px
             var scrollTop = $(window).scrollTop();

@@ -569,48 +569,64 @@ and open the template in the editor.
                         <div class="videoWrapper">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/Oyyg9_UWPag" frameborder="0" allowfullscreen></iframe>
                         </div>
-
-                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" style="z-index: 20">
-  Launch demo modal
-</button>
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#giftChoose" style="z-index: 20">
+                            Launch demo modal
+                        </button>
                     </div>
                 </div>
-
                 <!-- Button trigger modal -->
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content text-center popup left">
-        <h1 class="bold">You got!</h1>
-        <br/>
-      <p>A gift for reading my resume, <b>pick one:</b></p>
-      <br/>
-      <br/>
-      <div class="row">
-        <div class="col-md-6">
-            <div>
-                <img src="img/fortune.gif" alt="fortune" width="260" height="195"/>
-                </iframe>
-                <div class="cover">
-                    <h3>Fortune</h3>
+                <!-- Modal -->
+                <div class="modal fade" id="giftChoose" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content text-center popup left">
+                            <h2 class="bold">You got a gift!</h2>
+                            <br/>
+                            <p>
+                                <h4>(for reading my resume), <b>choose one:</b></h4></p>
+                            <br/>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <img src="img/fortune.gif" alt="fortune" width="195" height="146" style="margin-left: -20px;" />
+                                    <a id="launchGiftA" href="#" data-toggle="modal" data-target="#giftA">
+                                        <div class="cover">
+                                            <h3>A Fortune</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="or">
+                                        <h3>or</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 text-center" style="background: #586063; float: right">
+                                    <img src="img/giphy.gif" alt="fortune" width="146" height="146" />
+                                    <a id="launchGiftB" href="#" data-toggle="modal" data-target="#giftB">
+                                        <div class="cover">
+                                            <h3>A Giphy</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6 text-center" style="background: #586063">
-            <img src="img/giphy.gif" alt="fortune" width="195" height="195"/>
-            <div class="cover">
-                <h3>Giphy</h3>
-            </div>
-        </div>
-      </div>
-      <br/>
-      <br/>
-      <p style="color: #AAAAAA">PD.: If you just scrolled the page, and didn't read my resume, close this window <b>immediatly</b> or <b>a kitty will die.</b></p>
-    </div>
-  </div>
-</div>
+                <!-- Modal -->
+                <div class="modal fade" id="giftA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content text-center black-modal">
+                            <img src="img/loading.gif"/>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="giftB" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content text-center black-modal">
+                            <img src="img/loading.gif"/>
+                        </div>
+                    </div>
+                </div>
                 <br/>
                 <br/>
                 <br/>

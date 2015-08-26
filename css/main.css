@@ -306,7 +306,7 @@ circle {
 }
 
 .cover {
-        display: inline;
+    display: inline;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -316,7 +316,10 @@ circle {
     transition: background 0.5s ease;
     color: transparent;
     text-align: center;
-    padding-top: 30%;
+}
+
+.cover, .or{
+    padding-top: 60px;
 }
 
 .cover:hover{
@@ -327,4 +330,8 @@ circle {
 .modal-content{
     padding: 30px;
     background: rgba(255,255,255,1);
+}
+
+.black-modal{
+    background: rgba(0,0,0,0.8);
 }
