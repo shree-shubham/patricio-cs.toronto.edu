@@ -1,0 +1,14 @@
+{
+  "name": "fortune.js",
+  "homepage": "https://github.com/patriciocordova/fortune.js",
+  "_release": "12aaca905b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "12aaca905be18b23d80d5fdb0f8ecc8da5f8e2aa"
+  },
+  "_source": "https://github.com/patriciocordova/fortune.js.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/patriciocordova/fortune.js.git",
+  "_direct": true
+}
