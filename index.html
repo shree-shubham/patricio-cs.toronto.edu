@@ -579,31 +579,26 @@ and open the template in the editor.
                 <div class="modal fade" id="giftChoose" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content text-center popup left">
-                            <h2 class="bold">You got a gift!</h2>
+                            <h2 class="bold">Choose one:</h2>
                             <br/>
                             <p>
-                                <h4>(for reading my resume), <b>choose one:</b></h4></p>
+                                <h4>You got a gift for reading my resume.<br/>If you didn't read it, and just scrolled the page, close this window immediatly or a kitty will die.</h4></p>
                             <br/>
                             <br/>
                             <div class="row">
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <img src="img/fortune.gif" alt="fortune" width="195" height="146" style="margin-left: -20px;" />
                                     <a id="launchGiftA" href="#" data-toggle="modal" data-target="#giftA">
                                         <div class="cover">
-                                            <h3>A Fortune</h3>
+                                            <h3>A random fortune</h3>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-md-2">
-                                    <div class="or">
-                                        <h3>or</h3>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 text-center" style="background: #586063; float: right">
+                                <div class="col-md-6 text-center" style="background: #586063; float: right">
                                     <img src="img/giphy.gif" alt="fortune" width="146" height="146" />
                                     <a id="launchGiftB" href="#" data-toggle="modal" data-target="#giftB">
                                         <div class="cover">
-                                            <h3>A Giphy</h3>
+                                            <h3>A random giphy</h3>
                                         </div>
                                     </a>
                                 </div>
@@ -615,7 +610,9 @@ and open the template in the editor.
                 <div class="modal fade" id="giftA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content text-center black-modal">
-                            <img src="img/loading.gif"/>
+                            <h2 class="white">
+                                <img src="img/loading.gif"/>
+                            </h2>
                         </div>
                     </div>
                 </div>
@@ -680,6 +677,8 @@ and open the template in the editor.
     <!-- Canvas -->
     <script src="js/d3.min.js"></script>
     <script src="js/viz.js"></script>
+    <!-- Fortune.js -->
+    <script src="bower_components/fortune.js/fortune.js"></script>
 </body>
 
 </html>

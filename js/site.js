@@ -45,12 +45,34 @@
 
         $('#launchGiftA').click(function(){
             closeModal("#giftChoose");
-            
+            fortune.getQuote(function(quote) {
+                var title = "<h4>Your fortune is:</h4><br/>"
+                $("#giftA .modal-content h2").html(title + quote);
+            });
         });
 
         $('#launchGiftB').click(function(){
             closeModal("#giftChoose");
+            invokeGiphy(function(response){
+                if(response.status > 0){
+                    var image = "<img alt=\"lucky giphy\" src=\"" + response.data.data.image_url + "\"/>";
+                    $("#giftB .modal-content").html(image);
+                }
+            });
         });
+
+        function invokeGiphy(callback){
+            $.ajax({
+              url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=lucky",
+              dataType: "json",
+            }).done(function(response) {
+                callback({"status":1,"data":response});
+            }).error(function(){
+                callback({"status":-1,"error":"Well, this is embarrasing. There was an error connecting to Giphy. Get this kitty instead: "});
+            });
+        }
+
+        function processGiphyResponse(){}
 
         function setNewElementOpacity(){
             var distance = 200; // 200px
