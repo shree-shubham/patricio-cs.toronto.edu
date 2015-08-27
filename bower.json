@@ -1,0 +1,7 @@
+{
+    "name": "patricio-cs.toronto.edu",
+    "description": "http://www.cs.toronto.edu/~patricio",
+    "dependencies": {
+        "fortune.js": "https://github.com/patriciocordova/fortune.js.git"
+    }
+}
