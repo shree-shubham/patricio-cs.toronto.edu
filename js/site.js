@@ -46,7 +46,7 @@
         $('#launchGiftA').click(function(){
             closeModal("#giftChoose");
             fortune.getQuote(function(quote) {
-                var title = "<h4>Your fortune is:</h4><br/>"
+                var title = "<h4>Your fortune is:</h4><br/>";
                 $("#giftA .modal-content h2").html(title + quote);
             });
         });
@@ -55,8 +55,9 @@
             closeModal("#giftChoose");
             invokeGiphy(function(response){
                 if(response.status > 0){
+                    var title = "<h4>This is a <a href=\"http://giphy.com/search/lucky\">#lucky</a> gif</h4><br/>"
                     var image = "<img alt=\"lucky giphy\" src=\"" + response.data.data.image_url + "\"/>";
-                    $("#giftB .modal-content").html(image);
+                    $("#giftB .modal-content").html(title + image);
                 }
             });
         });
