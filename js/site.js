@@ -53,16 +53,29 @@
 
         $('#launchGiftB').click(function(){
             closeModal("#giftChoose");
+            updateGiftB();
+        });
+
+        $("#refreshGiftB").click(function(){
+            updateGiftB();
+        });
+
+        function updateGiftB(){
+            $("#giftBLoading").show();
             invokeGiphy(function(response){
+                $("#giftBLoading").hide();
                 if(response.status > 0){
                     var title = "<h4>This is a <a href=\"http://giphy.com/search/lucky\">#lucky</a> gif</h4><br/>"
                     var image = "<img alt=\"lucky giphy\" src=\"" + response.data.data.image_url + "\"/>";
-                    $("#giftB .modal-content").html(title + image);
+                    $("#giftBContent").html(title + image);
+                }else{
+                    $("#giftBContent").html(response.error);
                 }
             });
-        });
+        }
 
         function invokeGiphy(callback){
+            $("#giftB .modal-content").html("<img src=\"img/loading.gif\"/>");
             $.ajax({
               url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=lucky",
               dataType: "json",
