@@ -1,6 +1,7 @@
 (function() {
 
     $(document).ready(function() {
+        $("#button-gift").hide();
 
         // Toggles menu header visibility.
         function toggleHeader(show) {
@@ -22,9 +23,14 @@
             toggleHeader($("#info").hasClass("compacted"));
         });
 
+        var giftShowed = false;
         function checkMenuItem(hash){
             var checked = $(hash+"-i");
             checked.addClass("green");
+            if(hash == "#extracurricular-activities" && !giftShowed){
+                giftShowed = true;
+                $("#button-gift").show(400);
+            }
         }
 
         // Shows menu header when it is on top of page. Hides it otherwise.
@@ -39,55 +45,7 @@
             target: '.menu'
         });
 
-        function closeModal(id){
-            $(id).modal('hide')
-        }
-
-        $('#launchGiftA').click(function(){
-            closeModal("#giftChoose");
-            fortune.getQuote(function(quote) {
-                var title = "<h4>Your fortune is:</h4><br/>";
-                $("#giftA .modal-content h2").html(title + quote);
-            });
-        });
-
-        $('#launchGiftB').click(function(){
-            closeModal("#giftChoose");
-            updateGiftB();
-        });
-
-        $("#refreshGiftB").click(function(){
-            updateGiftB();
-        });
-
-        function updateGiftB(){
-            $("#giftBLoading").show();
-            invokeGiphy(function(response){
-                $("#giftBLoading").hide();
-                if(response.status > 0){
-                    var title = "<h4>This is a <a href=\"http://giphy.com/search/lucky\">#lucky</a> gif</h4><br/>"
-                    var image = "<img alt=\"lucky giphy\" src=\"" + response.data.data.image_url + "\"/>";
-                    $("#giftBContent").html(title + image);
-                }else{
-                    $("#giftBContent").html(response.error);
-                }
-            });
-        }
-
-        function invokeGiphy(callback){
-            $("#giftB .modal-content").html("<img src=\"img/loading.gif\"/>");
-            $.ajax({
-              url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=lucky",
-              dataType: "json",
-            }).done(function(response) {
-                callback({"status":1,"data":response});
-            }).error(function(){
-                callback({"status":-1,"error":"Well, this is embarrasing. There was an error connecting to Giphy. Get this kitty instead: "});
-            });
-        }
-
-        function processGiphyResponse(){}
-
+        // Changes opacity of text blocks when they get closer to the be in the front page.
         function setNewElementOpacity(){
             var distance = 200; // 200px
             var scrollTop = $(window).scrollTop();
@@ -118,6 +76,83 @@
         $(window).scroll(function() {
             setNewElementOpacity();
         });
+
+        /*********************
+        / Gifts Management
+        /*********************/
+        $('#launchGiftA').click(function(){
+            closeModal("#giftChoose");
+            $("#button-gift").hide(400);
+            updateFortune();
+        });
+
+        $('#launchGiftB').click(function(){
+            closeModal("#giftChoose");
+            $("#button-gift").hide(400);
+            updateGiphy();
+        });
+
+        $("#giftBRefresh").click(function(){
+            updateGiphy();
+        });
+
+        $("#giftARefresh").click(function(){
+            updateFortune();
+        });
+
+        function closeModal(id){
+            $(id).modal('hide');
+        }
+
+        function updateFortune(){
+            updateModalContent("A",false);
+            fortune.getQuote(function(quote) {
+                updateModalContent("A",true);
+                quote = "<h2>"+quote+"</h2>";
+                $("#giftAContent").html(quote);
+            });
+        }
+
+        function updateGiphy(){
+            updateModalContent("B",false);
+            invokeGiphy(function(response){
+                if(response.status > 0){
+                    updateModalContent("B",true);
+                    var giphy = '<iframe src="//giphy.com/embed/'+response.data.id+'" width="480" height="245" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>';
+                    $("#giftBContent").html(giphy);
+                }else{
+                    $("#giftBLoading").hide();
+                    $("#giftBContent").html(response.error);
+                    $("#giftBContent").show();
+                    $("#giftBRefresh").show();
+                }
+            });
+        }
+
+        function invokeGiphy(callback){
+            $.ajax({
+              url: "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=lucky",
+              dataType: "json",
+            }).done(function(response) {
+                callback({"status":1,"data":response.data});
+            }).error(function(){
+                callback({"status":-1,"error":"<h4>Well, this is embarrasing: there was an error connecting to Giphy. Get this kitty instead:</h4></br></br><img src=\"img/kitty.gif\" alt=\"kitty\"/>"});
+            });
+        }
+
+        function updateModalContent(letter,show){
+            if(!show){
+                $("#gift"+letter+"Title").hide();
+                $("#gift"+letter+"Content").hide();
+                $("#gift"+letter+"Loading").show();
+                $("#gift"+letter+"Refresh").hide();
+            }else{
+                $("#gift"+letter+"Title").show();
+                $("#gift"+letter+"Content").show();
+                $("#gift"+letter+"Loading").hide();
+                $("#gift"+letter+"Refresh").show();
+            }
+        }
     });
 
 })(window);

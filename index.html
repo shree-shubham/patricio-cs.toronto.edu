@@ -69,7 +69,7 @@ and open the template in the editor.
                     <div id="me"></div>
                     <div id="menu" class="menu flip-container">
                         <div id="info">
-                            <a href="#" id="resize"><span id="resize-icon" class="glyphicon glyphicon-resize-full"></span></a>
+                            <a href="javascript:void(0)" id="resize"><span id="resize-icon" class="glyphicon glyphicon-resize-full"></span></a>
                             <div id="title-small" class="highlight">Patricio C&oacute;rdova</div>
                             <br/>
                             <table id="personal">
@@ -569,9 +569,6 @@ and open the template in the editor.
                         <div class="videoWrapper">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/Oyyg9_UWPag" frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#giftChoose" style="z-index: 20">
-                            Launch demo modal
-                        </button>
                     </div>
                 </div>
                 <!-- Button trigger modal -->
@@ -579,16 +576,16 @@ and open the template in the editor.
                 <div class="modal fade" id="giftChoose" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content text-center popup left">
-                            <h2 class="bold">Choose one:</h2>
+                            <h2 class="bold">Choose one</h2>
                             <br/>
                             <p>
-                                <h4>You got a gift for reading my resume.<br/>If you didn't read it, and just scrolled the page, close this window immediatly or a kitty will die.</h4></p>
+                                <h4>You got a gift for reading my resume.<br/><span style="font-size: 12px">If you didn't read it, and just scrolled the page, close this window immediatly or a kitty will die.</span></h4></p>
                             <br/>
                             <br/>
                             <div class="row">
                                 <div class="col-md-6">
                                     <img src="img/fortune.gif" alt="fortune" width="195" height="146" style="margin-left: -20px;" />
-                                    <a id="launchGiftA" href="#" data-toggle="modal" data-target="#giftA">
+                                    <a id="launchGiftA" href="javascript:void(0)" data-toggle="modal" data-target="#giftA">
                                         <div class="cover">
                                             <h3>A random fortune</h3>
                                         </div>
@@ -596,7 +593,7 @@ and open the template in the editor.
                                 </div>
                                 <div class="col-md-6 text-center" style="background: #586063; float: right">
                                     <img src="img/giphy.gif" alt="fortune" width="146" height="146" />
-                                    <a id="launchGiftB" href="#" data-toggle="modal" data-target="#giftB">
+                                    <a id="launchGiftB" href="javascript:void(0)" data-toggle="modal" data-target="#giftB">
                                         <div class="cover">
                                             <h3>A random giphy</h3>
                                         </div>
@@ -609,23 +606,27 @@ and open the template in the editor.
                 <!-- Modal -->
                 <div class="modal fade" id="giftA" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content text-center black-modal">
-                            <h2 class="white">
-                                <img src="img/loading.gif"/>
-                            </h2>
+                        <div class="modal-content text-center popup left">
+                            <div id="giftATitle"><h3>Your <a href="https://github.com/patriciocordova/fortune.js" target=\"_blank\">fortune</a> is:</h3><br/></div>
+                            <div id="giftAContent"></div>
+                            <div id="giftALoading"><img src="img/loading.gif"/></div>
+                            <a id="giftARefresh" href="javascript:void(0)"><br/><h4><i class="fa fa-refresh"></i></h4></a>
                         </div>
                     </div>
                 </div>
                 <!-- Modal -->
                 <div class="modal fade" id="giftB" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content text-center black-modal">
+                        <div class="modal-content text-center popup left">
+                            <div id="giftBTitle"><h3>Your <a href="http://giphy.com/search/lucky" target="_blank">#lucky</a> gif(t):</h3><br/></div>
                             <div id="giftBContent"></div>
                             <div id="giftBLoading"><img src="img/loading.gif"/></div>
-                            <a id="refreshGiftB" href="#">Refresh</a>
+                            <a id="giftBRefresh" href="javascript:void(0)"><br/><h4><i class="fa fa-refresh"></i></h4></a>
                         </div>
                     </div>
                 </div>
+
+
                 <br/>
                 <br/>
                 <br/>
@@ -646,6 +647,11 @@ and open the template in the editor.
                 <br/>
                 <br/>
                 <br/>
+            </div>
+            <div class="hidden-xs">
+                <button id="button-gift" type="button" class="btn btn-primary btn-lg btn-circular btn-info" data-toggle="modal" data-target="#giftChoose" style="z-index: 20">
+                            <img src="img/gift-icon.png" alt="gift"/>
+                        </button>
             </div>
         </div>
     </div>

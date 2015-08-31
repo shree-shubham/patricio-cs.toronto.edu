@@ -336,3 +336,14 @@ circle {
     color: #FFFFFF;
     background: rgba(0,0,0,0.8);
 }
+
+.btn-circular{
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    height:80px;
+    width:80px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+}
