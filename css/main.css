@@ -50,13 +50,10 @@ h3 {
 }
 
 body {
-    background: url("../img/phi.png") center fixed;
+    background: #000;
     width: 100%;
     height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
     position: relative;
-    background: #111;
 }
 
 ul,
@@ -121,7 +118,7 @@ li {
     font-size: 0.9em;
     color: #222;
     position: relative;
-    height: 215px;
+    height: 225px;
     -webkit-transition: height 0.2s ease;
     -moz-transition: height 0.2s ease;
     -o-transition: height 0.2s ease;
@@ -131,7 +128,7 @@ li {
 }
 
 #info.compacted {
-    height: 63px;
+    height: 73px;
     overflow: hidden;
     -webkit-transition: height 0.2s ease;
     -moz-transition: height 0.2s ease;
@@ -149,6 +146,24 @@ li {
 #title-small {
     font-size: 1.4em;
     text-align: center;
+}
+
+#hidden{
+    position: fixed;
+    width:100%;
+    height:100%;
+    display:inline-box;
+    z-index:10;
+    opacity: 0;
+    background: #123;
+    transition: opacity 5s;
+}
+
+.popup,
+#me,
+#menu,
+#left {
+    z-index: 20;
 }
 
 
@@ -302,28 +317,6 @@ li {
     color: #4CAF50;
 }
 
-
-/********************************************************************************
-* Viz
-*********************************************************************************/
-
-rect {
-    fill: none;
-    pointer-events: all;
-}
-
-circle {
-    fill: none;
-    stroke-width: 2.5px;
-}
-
-.popup,
-#me,
-#menu,
-#left {
-    z-index: 20;
-}
-
 .cover {
     display: inline;
     width: 100%;
@@ -357,12 +350,60 @@ circle {
 }
 
 .btn-circular{
-    position: fixed;
-    right: 20px;
-    bottom: 10px;
     height:80px;
     width:80px;
     border-radius: 40px;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
+}
+
+.right-bottom{
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    z-index: 20;
+}
+
+.btn-blue{
+    background: #03A9F4;
+}
+
+.btn-green{
+    background: #8BC34A;
+}
+
+.btn-purple{
+    background: #512DA8;
+}
+
+.social-icon{
+    font-size: 24px;
+    color: #000;
+    transition: color 0.2s;
+}
+
+.si-gh:hover{
+    color: #555;
+}
+
+.si-in:hover{
+    color: #1b75ab;
+}
+
+.si-tw:hover{
+    color: #31cbfd;
+}
+
+/********************************************************************************
+* Viz
+*********************************************************************************/
+
+rect {
+    fill: none;
+    pointer-events: all;
+}
+
+circle {
+    fill: none;
+    stroke-width: 2.5px;
 }

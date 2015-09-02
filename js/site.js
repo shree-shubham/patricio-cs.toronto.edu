@@ -16,6 +16,14 @@
             }
         }
 
+        // Shows button that enables visualization.
+        var time = 400;
+        $("#fun").show(time);
+        $("#fun").click(function(){
+            startViz();
+            $("#fun").hide(time);
+        });
+
         // Toggles menu header according to clicks on little resize button
         // of right-top corner of the screen.
         $('#resize').click(function(e) {
@@ -99,6 +107,9 @@
         $("#giftARefresh").click(function(){
             updateFortune();
         });
+
+        var randomnumber=Math.floor(Math.random()*8);
+        $("body").css("background","url(\"img/"+randomnumber+".jpg\") center fixed no-repeat");
 
         function closeModal(id){
             $(id).modal('hide');

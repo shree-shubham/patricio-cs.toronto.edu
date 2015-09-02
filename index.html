@@ -14,13 +14,10 @@ and open the template in the editor.
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <style>
-
-    </style>
 </head>
 
 <body>
-    <div id="hidden" style="position: fixed;width:100%;height:100%;display:inline-box;z-index:10"></div>
+    <div id="hidden"></div>
     <div class="container front" id="top">
         <div class="row">
             <div class="col-md-12 visible-sm visible-xs">
@@ -72,6 +69,20 @@ and open the template in the editor.
                             <a href="javascript:void(0)" id="resize"><span id="resize-icon" class="glyphicon glyphicon-resize-full"></span></a>
                             <div id="title-small" class="highlight title">Patricio C&oacute;rdova</div>
                             <br/>
+                            <div class="text-center">
+                                <a href="http://www.github.com/patriciocordova" target="_blank">
+                                    <i class="fa fa-github social-icon si-gh"></i>
+                                </a>
+                                &nbsp;&nbsp;
+                                <a href="https://ec.linkedin.com/in/andrscordova" target="_blank">
+                                    <i class="fa fa-linkedin-square social-icon si-in"></i>
+                                </a>
+                                &nbsp;&nbsp;
+                                <a href="http://www.twitter.com/andrscordova" target="_blank">
+                                    <i class="fa fa-twitter-square social-icon si-tw"></i>
+                                </a>
+                            </div>
+                            <br/>
                             <table id="personal">
                                 <tr>
                                     <td style="width: 20px"><span class="glyphicon glyphicon-envelope"></span></td>
@@ -86,10 +97,6 @@ and open the template in the editor.
                                     <td>+ 416 618 5534</td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 20px"><b>@</b></td>
-                                    <td>andrscordova</td>
-                                </tr>
-                                <tr>
                                     <td style="width: 20px"><span class="glyphicon glyphicon-home"></span></td>
                                     <td>
                                         Department of Computer Science
@@ -101,7 +108,7 @@ and open the template in the editor.
                                 </tr>
                             </table>
                         </div>
-                        <ul class="nav sidenav">
+                        <ul class="nav sidenav title">
                             <li><a href="#highlights">I'm <i id="highlights-i" class="fa fa-check m-check"></i></a></li>
                             <li><a href="#areas-interest">I love <i id="areas-interest-i" class="fa fa-check m-check"></i></a></li>
                             <li><a href="#biography">Brief Bio (not that brief!) <i id="biography-i" class="fa fa-check m-check"></i></a></li>
@@ -579,7 +586,7 @@ and open the template in the editor.
                             <h2 class="bold">Choose one</h2>
                             <br/>
                             <p>
-                                <h4>You got a gift for reading my resume.<br/><span style="font-size: 12px">If you didn't read it, and just scrolled the page, close this window immediatly or a kitty will die.</span></h4></p>
+                                <h4>You got a gift for reading my resume.<br/><span style="font-size: 12px">If you didn't read it, and just scrolled the page, close this window immediatly or <b>a kitty will die.</b></span></h4></p>
                             <br/>
                             <br/>
                             <div class="row">
@@ -608,7 +615,7 @@ and open the template in the editor.
                     <div class="modal-dialog" role="document">
                         <div class="modal-content text-center popup left">
                             <div id="giftATitle">
-                                <h3>Your <a href="https://github.com/patriciocordova/fortune.js" target=\"_blank\">fortune</a> is:</h3>
+                                <h4>Your <a href="https://github.com/patriciocordova/fortune.js" target=\"_blank\">fortune</a> is:</h4>
                                 <br/>
                             </div>
                             <div id="giftAContent"></div>
@@ -624,7 +631,7 @@ and open the template in the editor.
                     <div class="modal-dialog" role="document">
                         <div class="modal-content text-center popup left">
                             <div id="giftBTitle">
-                                <h3>Your <a href="http://giphy.com/search/lucky" target="_blank">#lucky</a> gif(t):</h3>
+                                <h4>Your <a href="http://giphy.com/search/lucky" target="_blank">#lucky</a> gif(t):</h4>
                                 <br/>
                             </div>
                             <div id="giftBContent"></div>
@@ -657,9 +664,14 @@ and open the template in the editor.
                 <br/>
             </div>
             <div class="hidden-xs">
-                <button id="button-gift" type="button" class="btn btn-primary btn-lg btn-circular btn-info" data-toggle="modal" data-target="#giftChoose" style="z-index: 20; display: none">
-                    <img src="img/gift-icon.png" alt="gift" />
-                </button>
+                <div class="right-bottom">
+                    <button id="fun" type="button" class="btn btn-blue btn-lg btn-circular" style="display:none">
+                        <img src="img/color.png" alt="gift" />
+                    </button>
+                    <button id="button-gift" type="button" class="btn btn-purple btn-lg btn-circular" data-toggle="modal" data-target="#giftChoose">
+                        <img src="img/gift-icon.png" alt="gift" />
+                    </button>
+                </div>
             </div>
         </div>
     </div>

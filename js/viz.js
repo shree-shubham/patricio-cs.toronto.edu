@@ -6,51 +6,61 @@
     /* ...
     /* D3 rules!
     *********************************************************/
+    
+    var started = false;
 
+    window.startViz = function() {
 
-    var width = Math.max(960, innerWidth),
-        height = Math.max(500, innerHeight);
+        if(started)
+            return;
 
-    var i = 0;
+        var width = Math.max(960, innerWidth),
+            height = Math.max(500, innerHeight);
 
-    var svg = d3.select("#hidden").append("svg")
-        .attr("width", width)
-        .attr("height", height);
+        var i = 0;
 
-    var rect = svg.append("rect")
-        .attr("width", width)
-        .attr("height", height)
-        .on("ontouchstart" in document ? "touchmove" : "mousemove", particle)
-        .on("click", background);
+        $("#hidden").css("opacity","1");
 
-    function particle() {
-        var m = d3.mouse(this);
+        var svg = d3.select("#hidden").append("svg")
+            .attr("width", width)
+            .attr("height", height);
 
-        svg.insert("circle", "rect")
-            .attr("cx", m[0])
-            .attr("cy", m[1])
-            .attr("r", 10)
-            .style("fill", d3.hsl((i = (i + 1) % 360), 1, .5))
-            .style("stroke", d3.hsl((i), 1, .5))
-            .style("stroke-opacity", 1)
-            .style("fill-opacity", 1)
-          .transition()
-            .duration(10000)
-            .ease(Math.sqrt)
-            .attr("r", 50)
-            .style("fill-opacity", 1e-6)
-            .style("stroke-opacity", 1e-6)
-            .remove();
+        var rect = svg.append("rect")
+            .attr("width", width)
+            .attr("height", height)
+            .on("ontouchstart" in document ? "touchmove" : "mousemove", particle)
+            .on("click", background);
 
-        d3.event.preventDefault();
+        function particle() {
+            var m = d3.mouse(this);
+
+            svg.insert("circle", "rect")
+                .attr("cx", m[0])
+                .attr("cy", m[1])
+                .attr("r", 10)
+                .style("fill", d3.hsl((i = (i + 1) % 360), 1, .5))
+                .style("stroke", d3.hsl((i), 1, .5))
+                .style("stroke-opacity", 1)
+                .style("fill-opacity", 1)
+                .transition()
+                .duration(10000)
+                .ease(Math.sqrt)
+                .attr("r", 50)
+                .style("fill-opacity", 1e-6)
+                .style("stroke-opacity", 1e-6)
+                .remove();
+
+            d3.event.preventDefault();
+        }
+
+        function background() {
+            rect.style("fill", d3.hsl((i), 1, .5))
+                .style("fill-opacity", 1)
+                .transition()
+                .duration(1000)
+                .style("fill", "#FFFFFF")
+                .style("fill-opacity", 1e-6);
+        }
     }
 
-    function background() {
-        rect.style("fill", d3.hsl((i), 1, .5))
-            .style("fill-opacity", 1)
-            .transition()
-            .duration(1000)
-            .style("fill", "#FFFFFF")
-            .style("fill-opacity", 1e-6);
-    }
 })(window);
