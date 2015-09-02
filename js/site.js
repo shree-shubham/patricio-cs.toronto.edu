@@ -1,6 +1,10 @@
 (function() {
 
     $(document).ready(function() {
+        // Chooses a random background
+        var randomnumber=Math.floor(Math.random()*8);
+        $("body").css("background","url(\"img/"+randomnumber+".jpg\") center fixed no-repeat");
+
         $("#button-gift").hide();
 
         // Toggles menu header visibility.
@@ -17,8 +21,10 @@
         }
 
         // Shows button that enables visualization.
-        var time = 400;
-        $("#fun").show(time);
+        var time = 300;
+        window.setTimeout(function(){
+            $("#fun").show(time);
+        },1500);
         $("#fun").click(function(){
             startViz();
             $("#fun").hide(time);
@@ -37,7 +43,7 @@
             checked.addClass("green");
             if(hash == "#extracurricular-activities" && !giftShowed){
                 giftShowed = true;
-                $("#button-gift").show(400);
+                $("#button-gift").show(time);
             }
         }
 
@@ -107,9 +113,6 @@
         $("#giftARefresh").click(function(){
             updateFortune();
         });
-
-        var randomnumber=Math.floor(Math.random()*8);
-        $("body").css("background","url(\"img/"+randomnumber+".jpg\") center fixed no-repeat");
 
         function closeModal(id){
             $(id).modal('hide');
