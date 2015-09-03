@@ -59,19 +59,25 @@
             target: '.menu'
         });
 
+        // Variables required for scroll spy.
+        var windowHeight = $(window).height();
+        var documentHeight = $(document).height();
+
+        // Recalculate window size if resized.
+        $(window).resize(function() {
+            console.log("recalculated");
+            windowHeight = $(window).height();
+            documentHeight = $(document).height();
+        });
+
         // Changes opacity of text blocks when they get closer to the be in the front page.
         function setNewElementOpacity(){
             var distance = 200; // 200px
             var scrollTop = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            var documentHeight = $(document).height();
 
             $('.popup').each(function(i) {
                 var objectTop = $(this).position().top;
-                var objectHeight = $(this).outerHeight();
-                var objectBottom = objectTop + objectHeight;
                 var windowBottom = scrollTop + windowHeight;
-                var percentajeOnScreen = Math.abs(windowBottom - objectBottom);
 
                 if (windowBottom - objectTop < distance) {
                     $(this).css("opacity", 0.3);
