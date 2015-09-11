@@ -156,7 +156,7 @@
             }).done(function(response) {
                 callback({"status":1,"data":response.data});
             }).error(function(){
-                callback({"status":-1,"error":"<h4>Well, this is embarrasing: there was an error connecting to Giphy. Get this kitty instead:</h4></br></br><img src=\"img/kitty.gif\" alt=\"kitty\"/>"});
+                callback({"status":-1,"error":"<h4>Well, this is embarrasing: there was an error connecting to Giphy.<br/>Get this kitty instead:</h4></br></br><img src=\"img/kitty.jpg\" alt=\"kitty\"/>"});
             });
         }
 
