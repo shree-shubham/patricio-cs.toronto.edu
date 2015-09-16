@@ -2,8 +2,8 @@
 
     $(document).ready(function() {
         // Chooses a random background
-        var randomnumber=Math.floor(Math.random()*8);
-        $("body").css("background","url(\"img/"+randomnumber+".jpg\") center fixed no-repeat");
+        //var randomnumber=Math.floor(Math.random()*8);
+        //$("body").css("background","url(\"img/"+randomnumber+".jpg\") center fixed no-repeat");
 
         $("#button-gift").hide();
 
