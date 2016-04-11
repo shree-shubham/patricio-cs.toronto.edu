@@ -71,8 +71,8 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    background: url("../img/back1.jpg");
-    background-size: contain;
+    background: url("../img/mobydick2.jpg");
+    background-size: cover;
     background-repeat: repeat-x;
     background-position: center;
     background-attachment: fixed;
@@ -94,7 +94,7 @@ li {
 
 #personal td {
     vertical-align: top;
-    padding-bottom: 6px;
+    padding-bottom: 3px;
 }
 
 #personal-big td {
@@ -121,7 +121,8 @@ li {
     border-radius: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
-    background: url("../img/me.jpg") no-repeat;
+    background: url("../img/me2.JPG") no-repeat;
+    background-size: 200px 256px;
     margin: auto;
     border: 2px solid #ffffff;
 }
@@ -140,7 +141,7 @@ li {
     font-size: 0.9em;
     color: #222;
     position: relative;
-    height: 225px;
+    height: 220px;
     -webkit-transition: height 0.2s ease;
     -moz-transition: height 0.2s ease;
     -o-transition: height 0.2s ease;
@@ -150,7 +151,7 @@ li {
 }
 
 #info.compacted {
-    height: 73px;
+    height: 85px;
     overflow: hidden;
     -webkit-transition: height 0.2s ease;
     -moz-transition: height 0.2s ease;
@@ -186,6 +187,16 @@ li {
 #menu,
 #left {
     z-index: 20;
+}
+
+#updated{
+    padding-top: 8px;
+    font-size: 0.8em;
+    color: #888;
+}
+
+#icons{
+    padding-top: 5px;
 }
 
 
@@ -242,9 +253,9 @@ li {
     border-radius: 2px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
-    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
     padding: 30px 30px;
     background: #fff;
     display: inline-block;
@@ -381,7 +392,7 @@ li {
 
 .btn-circular img{
     width: 32px; 
-    height: 32px"
+    height: 32px;
 }
 
 .right-bottom{
